@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" [attr.height]="_height" [attr.viewBox]="_viewBox" *ngIf="besResult">
+
+    <defs>
+        <marker id="arrowheadRed" markerWidth="5" markerHeight="3.5"
+            refX="0" refY="1.75" orient="auto">
+            <polygon points="0 0, 5 1.75, 0 3.5" 
+            stroke="red"
+            />
+        </marker>
+
+        <marker id="arrowhead" markerWidth="5" markerHeight="3.5"
+            refX="0" refY="1.75" orient="auto">
+            <polygon points="0 0, 5 1.75, 0 3.5" />
+        </marker>
+
+        <marker id="arrowheadBlue" markerWidth="5" markerHeight="3.5"
+            refX="0" refY="1.75" orient="auto">
+            <polygon points="0 0, 5 1.75, 0 3.5" 
+            stroke="blue"
+            />
+        </marker>
+    </defs>
+
+
+    <g>
+        <circle cx="0" cy="0" r="2" />
+        <line x1="0" y1="0"
+            [attr.x2]="besResult?.stromPunkt!.x"
+            [attr.y2]="besResult?.stromPunkt!.y" stroke="black"
+            stroke-width="2"
+            marker-end="url(#arrowhead)"
+            matTooltip="StR {{besResult.stR}}°, StG {{besResult.stG}} kn"
+        />
+        <line x1="0"
+            y1="0"
+            [attr.x2]="besResult?.schnittPunkt!.x"
+            [attr.y2]="besResult?.schnittPunkt!.y" stroke="blue" stroke-width="2"
+            marker-end="url(#arrowheadBlue)"
+            matTooltip="KüG {{besResult.kuG}}°, FüG {{besResult.fuG}} kn"
+
+        />
+        <line
+            [attr.x1]="besResult?.stromPunkt!.x"
+            [attr.y1]="besResult?.stromPunkt!.y"
+            [attr.x2]="besResult?.schnittPunkt!.x"
+            [attr.y2]="besResult?.schnittPunkt!.y"
+            stroke-width="2"
+            stroke="red"
+            marker-end="url(#arrowheadRed)"
+            matTooltip="KdW {{besResult.kdW}}°, FdW {{besResult.fdW}} kn"
+
+        />
+    </g>
+</svg>
+
+<!-- transform="translate(120,100) rotate(25)" -->

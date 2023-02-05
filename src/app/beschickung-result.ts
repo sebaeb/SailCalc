@@ -5,6 +5,10 @@ export type BeschickungResult = {
     fuG: number;
     kdW: number;
     bs: number;
+    stR: number;
+    stG: number;
+    kuG: number;
+    fdW: number;
     schnittPunkt: coordinate | undefined;
 
 }

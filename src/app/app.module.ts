@@ -16,12 +16,16 @@ import { MatListModule } from '@angular/material/list';
 import { BesStromComponent } from './bes-strom/bes-strom.component';
 
 import {MatInputModule} from '@angular/material/input';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
+import { BeschickungComponent } from './beschickung/beschickung.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    BesStromComponent
+    BesStromComponent,
+    BeschickungComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,8 @@ import {MatInputModule} from '@angular/material/input';
     MatIconModule,
     MatListModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

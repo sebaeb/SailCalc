@@ -1,4 +1,4 @@
-<p>Beschickung für Strom</p>
+<h3>Beschickung für Strom</h3>
 <div style="padding-left: 1em;">
     <form class="example-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
         <mat-form-field class="example-full-width">
@@ -27,35 +27,11 @@
     </form>
     <br />
     <div *ngIf="_beschickung">
-        <h3>Ergebnis</h3>
-        <form class="example-form">
-            <mat-form-field class="example-full-width">
-                <mat-label>Kurs durchs Wasser ° (KdW)</mat-label>
-                <input type="number" matInput value="{{_beschickung.kdW}}">
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width">
-                <mat-label>Beschickung für Strom °</mat-label>
-                <input type="number" matInput value="{{_beschickung.bs}}">
-            </mat-form-field>
-
-
-            <mat-form-field class="example-full-width">
-                <mat-label>Fahrt über Grund kn (FüG)</mat-label>
-                <input type="number" matInput value="{{_beschickung.fuG}}">
-            </mat-form-field>
-
-            <!-- <mat-form-field class="example-full-width">
-            <mat-label>Stromrichtung (StR)</mat-label>
-            <input type="number" matInput value="0">
-        </mat-form-field>
-
-        <mat-form-field class="example-full-width">
-            <mat-label>Stromgeschwindigkeit (StG)</mat-label>
-            <input type="number" matInput value="0">
-        </mat-form-field> -->
-
-        </form>
+        <p>
+            <span matTooltip="Kurs durchs Wasser, Fahrt durchs Wasser" style="color: red">KdW {{_beschickung.kdW}}°, FdW {{_beschickung.fdW}} kn</span><br />
+            <span matTooltip="Kurs über Grund, Fahrt über Grund" style="color: blue">KüG {{_beschickung.kuG}}°, FüG {{_beschickung.fuG}} kn</span><br />
+            <span matTooltip="Stromrichtung, Stromgeschwindigkeit" style="color: black">StR {{_beschickung.stR}}°, StG {{_beschickung.stG}} kn</span><br />
+        </p>
+        <app-beschickung [besResult]="_beschickung"></app-beschickung>
     </div>
-
 </div>

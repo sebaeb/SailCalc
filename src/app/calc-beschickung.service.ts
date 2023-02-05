@@ -41,16 +41,22 @@ export class CalcBeschickungService {
 
     let fahrtuGrund = this.vektorBetrag(gesamtV);
 
-    let br: BeschickungResult = { bs: Math.round(beschickung), kdW: Math.round(kursWasser), stromPunkt: stromV, fuG: this.round(fahrtuGrund,1), schnittPunkt: gesamtV };
+    let br: BeschickungResult = {
+      bs: Math.round(beschickung), kdW: Math.round(kursWasser), stromPunkt: stromV, fuG: this.round(fahrtuGrund, 1), schnittPunkt: gesamtV
+      , fdW: FdW
+      , stR: StR
+      , stG: StG
+      , kuG: KuG
+    };
 
     return br;
 
   }
 
-   round(value: number, precision: number) {
+  round(value: number, precision: number) {
     var multiplier = Math.pow(10, precision || 0);
     return Math.round(value * multiplier) / multiplier;
-}
+  }
 
   getCoordinates(angle: number, length: number): coordinate {
 
