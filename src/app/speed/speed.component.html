@@ -1,0 +1,20 @@
+<div style="padding-left: 1em;">
+    <form class="sail-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <mat-form-field class="sail-full-width">
+            <mat-label>Entfernung (sm)</mat-label>
+            <input type="number" matInput value="0" required ngModel name="distance" #distance="ngModel">
+        </mat-form-field>
+
+        <mat-form-field class="sail-full-width">
+            <mat-label>Zeit (Minuten)</mat-label>
+            <input type="number" matInput value="0" required ngModel name="time" #time="ngModel">
+        </mat-form-field>
+        <button id="basic" mat-raised-button color="primary">
+            Berechnen
+        </button>
+    </form>
+    <br />
+    <div class="sail-form" *ngIf="_speed != ''">
+        <p>Geschwindigkeit: {{_speed}} kn</p>
+    </div>
+</div>

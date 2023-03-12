@@ -1,22 +1,21 @@
-<h3>Beschickung für Strom</h3>
 <div style="padding-left: 1em;">
-    <form class="example-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
-        <mat-form-field class="example-full-width">
+    <form class="sail-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <mat-form-field class="sail-full-width">
             <mat-label>Kurs über Grund (KüG)</mat-label>
             <input type="number" matInput value="0" required ngModel name="KuG" #KuG="ngModel">
         </mat-form-field>
 
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="sail-full-width">
             <mat-label>Fahrt durchs Wasser (FdW)</mat-label>
             <input type="number" matInput value="0" required ngModel name="FdW" #FdW="ngModel">
         </mat-form-field>
 
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="sail-full-width">
             <mat-label>Stromrichtung (StR)</mat-label>
             <input type="number" matInput value="0" required ngModel name="StR" #StR="ngModel">
         </mat-form-field>
 
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="sail-full-width">
             <mat-label>Stromgeschwindigkeit (StG)</mat-label>
             <input type="number" matInput value="0" required ngModel name="StG" #StG="ngModel">
         </mat-form-field>
